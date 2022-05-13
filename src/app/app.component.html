@@ -1,0 +1,178 @@
+<router-outlet></router-outlet>
+<div class="maindiv">
+    <form style="padding-top: 20px; margin-right: 100px; margin-left: 50px;">
+        <!----------------------->
+        <!--- CREAR CAMPEONATO -->
+        <!----------------------->
+        <mat-accordion>
+            <mat-expansion-panel style="background-color: rgb(255, 20, 20);">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="titulo">
+                        Crear Campeonato
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Aqui se crea nuevo campeonato
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div style="display:flex; flex-direction: row;">
+                    <mat-card style="display: flex; flex-direction: column; 
+                  align-items: center; 
+                  width:500px;
+                  background-color: rgb(242, 233, 164);">
+                        <!---------------------------------->
+                        <!--- Datos para CREAR CAMPEONATO -->
+                        <mat-form-field>
+                            <input matInput name="nombre" minlength="5" maxlength="30" [(ngModel)]="nombre_campeonato" type="text" placeholder="Nombre">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput name="fecha_de_inicio" [(ngModel)]="fecha_inicio" type="date" placeholder=" Fecha de Inicio">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput name="hora_inicio" [(ngModel)]="hora_inicio" type="time" placeholder="Hora de inicio">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput name="fecha_final" [(ngModel)]="fecha_fin" type="date" placeholder="Fecha de Fin">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <textarea matInput name="reglas" [(ngModel)]="reglas" maxlength="1000" type="text" placeholder="Reglas"></textarea>
+                        </mat-form-field>
+
+                        <form fxLayoutAlign="stretch" fxLayout="column">
+                            <button (click)="agregarCampeonato()" style="margin: 10px" class="button-form">
+                    <mat-icon>check_circle_outline</mat-icon></button>
+                        </form>
+                    </mat-card>
+
+                    <table mat-table #campeonato [dataSource]="dataSourceCampeonato" style="width:50%; background-color: rgb(242, 233, 164); margin-left: 10px;">
+
+                        <!--- Tabla de campeonatos con su llave -->
+                        <!-- Columna de codigo -->
+                        <ng-container matColumnDef="nombre">
+                            <th mat-header-cell *matHeaderCellDef class="subtitulo"> Nombre de Carrera </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fecha_inicio">
+                            <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fecha_inicio}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fecha_fin">
+                            <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fecha_fin}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="llave">
+                            <th mat-header-cell *matHeaderCellDef> Estado </th>
+                            <td mat-cell *matCellDef="let element"> {{element.llave}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumnsCampeonato"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumnsCampeonato;"></tr>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <!------------------------------------->
+        <!--- CREAR CARRERA en un CAMPEONATO -->
+        <!------------------------------------->
+        <mat-accordion>
+            <mat-expansion-panel style="background-color: rgb(255, 20, 20);margin-top: 20px;">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="titulo">
+                        Crear Carrera
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Aqui se crea nueva carrera para campeonato existente
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div style="display:flex; flex-direction: row;">
+                    <mat-card style="display: flex; flex-direction: column; 
+                  align-items: center; 
+                  width:500px;
+                  background-color: rgb(242, 233, 164);">
+                        <!---------------------------------->
+                        <!--- Datos para CREAR CAMPEONATO -->
+                        <mat-form-field>
+                            <input matInput name="nombre" minlength="5" maxlength="30" [(ngModel)]="nombre_carrera" type="text" placeholder="Nombre">
+                        </mat-form-field>
+
+                        <button mat-button [matMenuTriggerFor]="menu">Pais</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>Costa Rica</button>
+                            <button mat-menu-item>Italia</button>
+                            <button mat-menu-item>Estados Unidos</button>
+                            <button mat-menu-item>Inglaterra</button>
+                            <button mat-menu-item>Rusia</button>
+                            <button mat-menu-item>Alemania</button>
+                            <button mat-menu-item>España</button>
+                            <button mat-menu-item>Francia</button>
+                        </mat-menu>
+
+                        <mat-form-field>
+                            <input matInput name="hora_inicio" [(ngModel)]="hora_inicio_carrera" type="time" placeholder="Hora de inicio">
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                            <input matInput name="hora_fin" [(ngModel)]="hora_inicio_carrera" type="time" placeholder="Hora de inicio">
+                        </mat-form-field>
+
+
+                        <mat-form-field>
+                            <input matInput name="fecha_inicio" [(ngModel)]="fecha_inicio_carrera" type="date" placeholder="Hora de inicio">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput name="fecha_final" [(ngModel)]="fecha_fin_carrera" type="date" placeholder="Fecha de Fin">
+                        </mat-form-field>
+
+
+
+                        <form fxLayoutAlign="stretch" fxLayout="column">
+                            <button style="margin: 10px" class="button-form">
+                    <mat-icon>check_circle_outline</mat-icon></button>
+                        </form>
+                    </mat-card>
+
+                    <table mat-table #campeonato [dataSource]="dataSourceCampeonato" style="width:50%; background-color: rgb(242, 233, 164); margin-left: 10px;">
+
+                        <!--- Tabla de campeonatos con su llave -->
+                        <!-- Columna de codigo -->
+                        <ng-container matColumnDef="nombre">
+                            <th mat-header-cell *matHeaderCellDef class="subtitulo"> Nombre de Campeonato </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fecha_inicio">
+                            <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fecha_inicio}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fecha_fin">
+                            <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
+                            <td mat-cell *matCellDef="let element"> {{element.fecha_fin}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="llave">
+                            <th mat-header-cell *matHeaderCellDef> Llave unica </th>
+                            <td mat-cell *matCellDef="let element"> {{element.llave}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumnsCampeonato"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumnsCampeonato;"></tr>
+                    </table>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+    </form>
+</div>

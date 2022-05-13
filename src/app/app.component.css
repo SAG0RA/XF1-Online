@@ -1,0 +1,52 @@
+.maindiv {
+    height: 5000px;
+    background-image: url('/assets/images/fondoF1.jpg');
+    background-size: 100px;
+}
+
+.registration-form {
+    padding: 20px;
+}
+
+.spinner {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.titulo {
+    text-transform: capitalize;
+    color: rgb(211, 221, 165);
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.subtitulo {
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.panel {
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.profpic {
+    height: 75px;
+    width: 75px;
+}
