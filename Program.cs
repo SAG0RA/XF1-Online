@@ -11,8 +11,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var mySQLConnectionConfig = new MySQLConfiguration(builder.Configuration.GetConnectionString(""));
+
 builder.Services.AddSingleton(mySQLConnectionConfig);
-builder.Services.AddScoped<IJugador, RJugador>();
+builder.Services.AddScoped<JugadorI, JugadorR>();
+builder.Services.AddScoped<EquipoI, EquipoR>();
+builder.Services.AddScoped<CampeonatoI, CampeonatoR>();
+builder.Services.AddScoped<CarreraI, CarreraR>();
 
 var app = builder.Build();
 

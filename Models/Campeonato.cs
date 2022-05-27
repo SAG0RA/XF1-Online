@@ -3,9 +3,9 @@
     public class Campeonato
     {
         public long id { get; set; }
-        public string nombre { get; set; }
-        public DateTime fecha_inicio { get; set; } 
-        public DateTime fecha_fin { get; set; }
-        public string descripcion_reglas { get; set; }
+        public string Nombre { get; set; }
+        public DateTime Fecha_inicio { get; set; } 
+        public DateTime Fecha_fin { get; set; }
+        public string Descripcion_reglas { get; set; }
     }
 }

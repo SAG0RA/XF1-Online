@@ -2,13 +2,11 @@
 
 namespace XFIA_API.Repositories
 {
-    public interface IJugador
+    public interface JugadorI
     {
-        Task<IEnumerable<Jugador>> GetInfoJugador(char nombre_usuario);
+        Task<IEnumerable<Equipo>> GetInfoJugador(char Nombre_usuario);
         Task<bool> InsertJugador(Jugador jugador);
         Task<bool> UpdateInfoJugador(Jugador jugador);
         Task<bool> DeleteJugador(Jugador jugador);
-
-
     }
 }

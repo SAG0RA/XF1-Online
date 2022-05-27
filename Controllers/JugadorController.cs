@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using XFIA_API.Models;
 using XFIA_API.Repositories;
 
@@ -9,9 +8,9 @@ namespace XFIA_API.Controllers
     [ApiController]
     public class JugadorController : ControllerBase
     {
-        private readonly IJugador _ijugador;
+        private readonly JugadorI _ijugador;
 
-        public JugadorController(IJugador ijugador)
+        public JugadorController(JugadorI ijugador)
         {
             _ijugador = ijugador;
         }
@@ -27,7 +26,7 @@ namespace XFIA_API.Controllers
         {
             if (jugador == null)
                 return BadRequest();
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var created = await _ijugador.InsertJugador(jugador);
@@ -42,16 +41,16 @@ namespace XFIA_API.Controllers
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            await _ijugador.InsertJugador(jugador);
+            
+            await _ijugador.UpdateInfoJugador(jugador);
 
             return NoContent();
         }
 
         [HttpDelete("{Nombre_usuario}")]
-        public async Task<IActionResult> DeleteJugador(char Nombre_usuario) 
+        public async Task<IActionResult> DeleteJugador(Jugador jugador)
         {
-            await _ijugador.DeleteJugador(new Jugador() { Nombre_usuario = Nombre_usuario });
+            await _ijugador.DeleteJugador(new Jugador() { Nombre_usuario = jugador.Nombre_usuario });
 
             return NoContent();
 

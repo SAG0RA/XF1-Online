@@ -4,10 +4,10 @@ using XFIA_API.Models;
 
 namespace XFIA_API.Repositories
 {
-    public class RJugador : IJugador
+    public class JugadorR : JugadorI
     {
         private MySQLConfiguration _connectionString;
-        public RJugador(MySQLConfiguration connectionString)
+        public JugadorR(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
@@ -17,19 +17,19 @@ namespace XFIA_API.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-        public Task<IEnumerable<Jugador>> DeleteJugador()
+        public Task<IEnumerable<Equipo>> DeleteJugador()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Jugador>> GetInfoJugador(char nombre_usuario)
+        public async Task<IEnumerable<Equipo>> GetInfoJugador(char nombre_usuario)
         {
             var db = dbConnection();
             var sql = @"
                         SELECT Nombre_usuario, Nombre, Apellido, Correo, Rango_edad, Pais, Contrasenia
                         FROM JUGADOR
                         WHERE Nombre_usuario = @nombre_usuario";
-            return await db.QueryAsync<Jugador>(sql, new { Nombre_usuario = nombre_usuario });
+            return await db.QueryAsync<Equipo>(sql, new { Nombre_usuario = nombre_usuario });
         }
 
         public async Task<bool> InsertJugador(Jugador jugador)
@@ -49,7 +49,7 @@ namespace XFIA_API.Repositories
             var sql = @"
                         UPDATE JUGADOR 
                         SET Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, Rango_edad = @Rango_edad, Pais = @Pais, Contrasenia = @Contrasenia 
-                        WHERE @Nombre_usuario = Nombre_usuario";
+                        WHERE Nombre_usuario = @Nombre_usuario";
             var result = await db.ExecuteAsync(sql, new { jugador.Nombre_usuario, jugador.Nombre, jugador.Apellido, jugador.Correo, jugador.Rango_edad, jugador.Pais, jugador.Contrasenia });
 
             return result > 0;

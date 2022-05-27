@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFIA-API\\XFIA-API.csproj": {}
+    "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\XFIA-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFIA-API\\XFIA-API.csproj": {
+    "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\XFIA-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFIA-API\\XFIA-API.csproj",
+        "projectUniqueName": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\XFIA-API.csproj",
         "projectName": "XFIA-API",
-        "projectPath": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFIA-API\\XFIA-API.csproj",
+        "projectPath": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\XFIA-API.csproj",
         "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFIA-API\\obj\\",
+        "outputPath": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
