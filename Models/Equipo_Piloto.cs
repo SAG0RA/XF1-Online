@@ -2,7 +2,7 @@
 {
     public class Equipo_Piloto
     {
-        public long equipo_id { get; set; }
-        public long piloto_id { get; set; }
+        public long Equipo_id { get; set; }
+        public long Piloto_id { get; set; }
     }
 }

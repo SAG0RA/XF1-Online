@@ -2,7 +2,7 @@
 {
     public class Escuderia
     {
-        public string nombre { get; set; }
-        public int precio { get; set; }
+        public string Nombre { get; set; }
+        public int Precio { get; set; }
     }
 }

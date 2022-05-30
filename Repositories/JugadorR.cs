@@ -17,11 +17,6 @@ namespace XFIA_API.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-        public Task<IEnumerable<Equipo>> DeleteJugador()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<Equipo>> GetInfoJugador(char nombre_usuario)
         {
             var db = dbConnection();

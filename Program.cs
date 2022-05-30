@@ -17,6 +17,9 @@ builder.Services.AddScoped<JugadorI, JugadorR>();
 builder.Services.AddScoped<EquipoI, EquipoR>();
 builder.Services.AddScoped<CampeonatoI, CampeonatoR>();
 builder.Services.AddScoped<CarreraI, CarreraR>();
+builder.Services.AddScoped<EscuderiaI, EscuderiaR>();
+builder.Services.AddScoped<PilotoI, PilotoR>();
+builder.Services.AddScoped<EquipoPilotoI, EquipoPilotoR>();
 
 var app = builder.Build();
 
