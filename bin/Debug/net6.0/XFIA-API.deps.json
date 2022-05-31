@@ -10,6 +10,7 @@
         "dependencies": {
           "Dapper": "2.0.123",
           "MySql.Data": "8.0.29",
+          "MySqlConnector": "2.1.9",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -126,6 +127,14 @@
           "lib/net6.0/ZstdNet.dll": {
             "assemblyVersion": "1.4.5.0",
             "fileVersion": "1.4.5.0"
+          }
+        }
+      },
+      "MySqlConnector/2.1.9": {
+        "runtime": {
+          "lib/net6.0/MySqlConnector.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.9.0"
           }
         }
       },
@@ -350,6 +359,13 @@
       "sha512": "sha512-3I+QUbSDTknNVAWUEr8JEtXU5sk83kofwy79TROew9YMhVQAq39jZwpHQfFNG757JZFGWJ5oa5VA3tZBxJa1jw==",
       "path": "mysql.data/8.0.29",
       "hashPath": "mysql.data.8.0.29.nupkg.sha512"
+    },
+    "MySqlConnector/2.1.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-72fgNLG3qVRaVkvjQOnY4jfbs7mukrMSWfu9b4l9LRwy5EKnPybRcDuaKtNI775c8FaeWgy/wEtV408opinAGQ==",
+      "path": "mysqlconnector/2.1.9",
+      "hashPath": "mysqlconnector.2.1.9.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

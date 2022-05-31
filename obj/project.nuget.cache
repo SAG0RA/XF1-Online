@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7zMbE8ZG/ID9hwxgP/HbROkFGZQvKeTGwi+ayCTzorQSLRM66uCfYjl32DAm7EJtvQK37icj/C9qC5d6heOhRQ==",
+  "dgSpecHash": "A2gg0hoIUVSnZbZg5mZKhfgX1C7Naa01jCCRxE9/7YFQiWvpxEWW0PasmBI5behnqzY5Z4tW9aSK1vDTGR0kJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\david\\Documents\\Programación\\Visual Studio\\XFI-API\\XFIA-API.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\david\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\mysql.data\\8.0.29\\mysql.data.8.0.29.nupkg.sha512",
+    "C:\\Users\\david\\.nuget\\packages\\mysqlconnector\\2.1.9\\mysqlconnector.2.1.9.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

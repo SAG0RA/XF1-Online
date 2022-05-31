@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var mySQLConnectionConfig = new MySQLConfiguration(builder.Configuration.GetConnectionString(""));
+var mySQLConnectionConfig = new MySQLConfiguration(builder.Configuration.GetConnectionString("ConnectionStrings: MySQLConnection"));
 
 builder.Services.AddSingleton(mySQLConnectionConfig);
 builder.Services.AddScoped<JugadorI, JugadorR>();

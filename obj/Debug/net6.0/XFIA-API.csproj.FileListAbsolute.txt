@@ -92,3 +92,4 @@ C:\Users\david\Documents\Programación\Visual Studio\XFI-API\obj\Debug\net6.0\sc
 C:\Users\david\Documents\Programación\Visual Studio\XFI-API\obj\Debug\net6.0\XFIA-API.csproj.CopyComplete
 C:\Users\david\Documents\Programación\Visual Studio\XFI-API\obj\Debug\net6.0\XFIA-API.genruntimeconfig.cache
 C:\Users\david\Documents\Programación\Visual Studio\XFI-API\obj\Debug\net6.0\ref\XFIA-API.dll
+C:\Users\david\Documents\Programación\Visual Studio\XFI-API\bin\Debug\net6.0\MySqlConnector.dll
