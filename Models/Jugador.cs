@@ -1,13 +1,17 @@
-﻿namespace XFIA_API.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace XF1Api.Models
 {
     public class Jugador
     {
-        public char Nombre_usuario { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public char Correo { get; set; }
-        public int Rango_edad { get; set; }
-        public string Pais { get; set; }
-        public char Contrasenia { get; set; }
+        public int Id { get; set; }
+        public string NombreUsuario { get; set; } = null!;
+        public string Nombre { get; set; } = null!;
+        public string Apellido { get; set; } = null!;
+        public string Correo { get; set; } = null!;
+        public string RangoEdad { get; set; } = null!;
+        public string Pais { get; set; } = null!;
+        public string? Contrasenia { get; set; }
     }
 }

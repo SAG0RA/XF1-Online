@@ -1,9 +1,12 @@
-﻿namespace XFIA_API.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace XF1Api.Models
 {
     public class Equipo
     {
-        public long id { get; set; }
-        public string Jugador_nombre_usuario { get; set; }
-        public string Escuderia_nombre { get; set; }
+        public string Id { get; set; } = null!;
+        public string JugadorNombreUsuario { get; set; } = null!;
+        public string? EscuderiaNombre { get; set; }
     }
 }

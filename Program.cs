@@ -1,33 +1,28 @@
-using XFIA_API;
-using XFIA_API.Repositories;
+/*using Microsoft.EntityFrameworkCore;
+using XF1Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<TodoContext>(opt =>
+    opt.UseInMemoryDatabase("TodoList"));
+//builder.Services.AddSwaggerGen(c =>
+//{
+//    c.SwaggerDoc("v1", new() { Title = "TodoApi", Version = "v1" });
+//});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var mySQLConnectionConfig = new MySQLConfiguration(builder.Configuration.GetConnectionString("ConnectionStrings: MySQLConnection"));
-
-builder.Services.AddSingleton(mySQLConnectionConfig);
-builder.Services.AddScoped<JugadorI, JugadorR>();
-builder.Services.AddScoped<EquipoI, EquipoR>();
-builder.Services.AddScoped<CampeonatoI, CampeonatoR>();
-builder.Services.AddScoped<CarreraI, CarreraR>();
-builder.Services.AddScoped<EscuderiaI, EscuderiaR>();
-builder.Services.AddScoped<PilotoI, PilotoR>();
-builder.Services.AddScoped<EquipoPilotoI, EquipoPilotoR>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwagger();
+    //app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
@@ -37,3 +32,31 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
+namespace XF1Api
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}

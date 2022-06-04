@@ -1,60 +1,79 @@
-﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using XFIA_API.Models;
-using XFIA_API.Repositories;
+using XF1Api.Dtos;
+using XF1Api.Models;
+using XF1Api.Repositories;
+using XF1Api.Data;
+using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
-namespace XFIA_API.Controllers
+namespace XF1Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class EscuderiaController : ControllerBase
+    [Route("api/Escuderia")]
+    public class EscuderiaController: ControllerBase
     {
-        private readonly EscuderiaI _iescuderia;
+    
 
-        public EscuderiaController(EscuderiaI iescuderia)
+        private readonly IEscuderiaRepository _escuderiaRepository;
+        public EscuderiaController(IEscuderiaRepository escuderiaRepository)
         {
-            _iescuderia = iescuderia;
+            _escuderiaRepository = escuderiaRepository;
         }
-
-        [HttpGet("{Nombre_usuario}")]
-        public async Task<IActionResult> GetInfoEscuderia(String Nombre)
+    
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Escuderia>>> GetEscuderia()
         {
-            return Ok(await _iescuderia.GetInfoEscuderia(Nombre));
+            var escuderias = await _escuderiaRepository.GetAll();
+            return Ok(escuderias);
         }
-
+    
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<Escuderia>> GetEscuderia(int Id)
+        {
+            var escuderia = await _escuderiaRepository.Get(Id);
+            if(escuderia == null)
+                return NotFound();
+    
+            return Ok(escuderia);
+        }
         [HttpPost]
-        public async Task<IActionResult> InsertEscuderia([FromBody] Escuderia escuderia)
+        public async Task<ActionResult> CreateEscuderia(CreateEscuderiaDto createEscuderiaDto)
         {
-            if (escuderia == null)
-                return BadRequest();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var created = await _iescuderia.InsertEscuderia(escuderia);
-
-            return Created("created", created);
+            Escuderia escuderia = new()
+            {
+                Id = createEscuderiaDto.Id,
+                Nombre = createEscuderiaDto.Nombre,
+                Precio = createEscuderiaDto.Precio
+            };
+            await _escuderiaRepository.Add(escuderia);
+            return Ok();
         }
-
-        [HttpPut]
-        public async Task<IActionResult> UpdateEscuderia([FromBody] Escuderia escuderia)
+    
+        [HttpDelete("{Id}")]
+        public async Task<ActionResult> DeleteEscuderia(int Id)
         {
-            if (escuderia == null)
-                return BadRequest();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            await _iescuderia.UpdateInfoEscuderia(escuderia);
-
-            return NoContent();
+            await _escuderiaRepository.Delete(Id);
+            return Ok();
         }
-
-        [HttpDelete("{Nombre_usuario}")]
-        public async Task<IActionResult> DeleteEscuderia(Escuderia escuderia)
+    
+        [HttpPut("{Id}")]
+        public async Task<ActionResult> UpdateEscuderia(int Id, UpdateEscuderiaDto updateEscuderiaDto)
         {
-            await _iescuderia.DeleteEscuderia(new Escuderia() { Nombre = escuderia.Nombre });
-
-            return NoContent();
-
+            Escuderia escuderia = new()
+            {
+                Precio = updateEscuderiaDto.Precio,
+            };
+            
+    
+            await _escuderiaRepository.Update(escuderia);
+            return Ok();
+    
         }
+        
     }
 }
