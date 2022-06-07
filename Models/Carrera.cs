@@ -7,11 +7,11 @@ namespace XF1Api.Models
     {
         public string Id { get; set; } = null!;
         public string Nombre { get; set; } = null!;
-        public string NombrePista { get; set; } = null!;
+        public string Nombre_pista { get; set; } = null!;
         public string Pais { get; set; } = null!;
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
+        public DateTime Fecha_inicio { get; set; }
+        public DateTime Fecha_fin { get; set; }
         public string Estado { get; set; } = null!;
-        public string IdCampeonato { get; set; } = null!;
+        public string Id_Campeonato { get; set; } = null!;
     }
 }

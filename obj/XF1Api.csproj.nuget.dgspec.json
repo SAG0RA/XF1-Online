@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\XF1Api.csproj": {}
+    "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\XF1Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\XF1Api.csproj": {
+    "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\XF1Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\XF1Api.csproj",
+        "projectUniqueName": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\XF1Api.csproj",
         "projectName": "XF1Api",
-        "projectPath": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\XF1Api.csproj",
+        "projectPath": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\XF1Api.csproj",
         "packagesPath": "C:\\Users\\chago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\obj\\",
+        "outputPath": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chago\\AppData\\Roaming\\NuGet\\NuGet.Config"

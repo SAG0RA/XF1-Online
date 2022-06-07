@@ -5,8 +5,8 @@ namespace XF1Api.Models
 {
     public class Equipo
     {
-        public string Id { get; set; } = null!;
-        public string JugadorNombreUsuario { get; set; } = null!;
-        public string? EscuderiaNombre { get; set; }
+        public int Id { get; set; }
+        public int Jugador_id { get; set; }
+        public int Escuderia_id { get; set; }
     }
 }

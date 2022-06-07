@@ -29,6 +29,11 @@ namespace XF1Api
 
             services.AddScoped<IXFIAOnlinedatabaseContext>(provider => provider.GetService<XFIAOnlinedatabaseContext>());
             services.AddScoped<IEscuderiaRepository, EscuderiaRepository>();
+            services.AddScoped<ICampeonatoRepository, CampeonatoRepository>();
+            services.AddScoped<IJugadorRepository, JugadorRepository>();
+            services.AddScoped<ICarreraRepository, CarreraRepository>();
+            services.AddScoped<IEquipoRepository, EquipoRepository>();
+            services.AddScoped<IPilotoRepository, PilotoRepository>();
 
             services.AddControllers();
 

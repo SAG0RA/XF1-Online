@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zWS5FtIoPo7H92SjP3kvCMQG/qQ07onQ4UMV4QTPxO/g7WKHEUPnxaK5xyTtoJC8W+yZCFmkvoGFGoMi+iC/Wg==",
+  "dgSpecHash": "JFkUUrwlSyG5MMeZeh2h2Ah5iQfYoGf6cy3TW3cjGwnp3fY/NDtNXev8nvEf+ApY/biTnXDvZ5XzlEDigeoASg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chago\\OneDrive\\Documents\\Tec\\Especificación y Diseño de Software\\Proyecto\\XF1Api\\XF1Api.csproj",
+  "projectFilePath": "C:\\Users\\chago\\OneDrive\\Documents\\GitHub\\XF1-Online\\XF1Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chago\\.nuget\\packages\\entityframeworkcore.triggers\\1.2.3\\entityframeworkcore.triggers.1.2.3.nupkg.sha512",
     "C:\\Users\\chago\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
