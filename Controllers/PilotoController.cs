@@ -48,7 +48,8 @@ namespace XF1Api.Controllers
             {
                 Id = createPilotoDto.Id,
                 Nombre = createPilotoDto.Nombre,
-                Precio = createPilotoDto.Precio
+                Precio = createPilotoDto.Precio,
+                Puntaje = createPilotoDto.Puntaje
             };
             await _pilotoRepository.Add(piloto);
             return Ok();
@@ -68,6 +69,7 @@ namespace XF1Api.Controllers
             {
                 Nombre = updatePilotoDto.Nombre,
                 Precio = updatePilotoDto.Precio,
+                Puntaje = updatePilotoDto.Puntaje,
             };
             
     

@@ -49,6 +49,7 @@ namespace XF1Api.Repositories
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Precio = escuderia.Precio;
+            itemToUpdate.Puntaje = escuderia.Puntaje;
 
             await _context.SaveChangesAsync();
     

@@ -48,7 +48,8 @@ namespace XF1Api.Controllers
             {
                 Id = createEscuderiaDto.Id,
                 Nombre = createEscuderiaDto.Nombre,
-                Precio = createEscuderiaDto.Precio
+                Precio = createEscuderiaDto.Precio,
+                Puntaje = createEscuderiaDto.Puntaje
             };
             await _escuderiaRepository.Add(escuderia);
             return Ok();
@@ -67,6 +68,7 @@ namespace XF1Api.Controllers
             Escuderia escuderia = new()
             {
                 Precio = updateEscuderiaDto.Precio,
+                Puntaje = updateEscuderiaDto.Puntaje
             };
             
     

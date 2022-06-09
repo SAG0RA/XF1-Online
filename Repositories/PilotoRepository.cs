@@ -50,6 +50,7 @@ namespace XF1Api.Repositories
                 throw new NullReferenceException();
             itemToUpdate.Nombre = piloto.Nombre;
             itemToUpdate.Precio = piloto.Precio;
+            itemToUpdate.Puntaje = piloto.Puntaje;
 
             await _context.SaveChangesAsync();
     
