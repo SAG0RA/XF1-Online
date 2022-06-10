@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+
+<body>
+    <mat-card class="card">
+        <h1 class="title"> REGISTRO</h1>
+        <form class="box-form">
+            <mat-form-field class="inputs">
+                <input matInput name="nombre" [(ngModel)]="nombre" type="text" placeholder="Nombre">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="apellido" [(ngModel)]="apellido" type="text" placeholder="Apellido">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="username" [(ngModel)]="nombre_usuario" type="text" placeholder="Nombre de Usuario">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="fecha_nacimiento" [(ngModel)]="fecha_nac" type="date" placeholder="Fecha de nacimiento">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="Correo" type="email" [(ngModel)]="correo" placeholder="Correo">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="Contraseña" [(ngModel)]="password" type="password" placeholder="Contraseña">
+
+            </mat-form-field>
+            <form [formGroup]="countryFormGroup">
+                <div fxLayoutAlign="center">
+                    <mat-select-country [(ngModel)]="pais" appearance="outline" label="Country" class="className" class="inputs" formControlName="country" (onCountrySelected)="onCountrySelected($event)">
+                    </mat-select-country>
+                </div>
+            </form>
+
+            <button style="margin:10px" (click)="Registro()">
+                REGISTRARSE
+            </button>
+        </form>
+    </mat-card>
+</body>

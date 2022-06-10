@@ -1,0 +1,281 @@
+<router-outlet></router-outlet>
+
+<body>
+    <form style="display:flex; flex-direction: column; margin: 50px; ">
+        <form style="margin-bottom:25px; ">
+            <mat-label id='presupuesto' class="titulo" style="background-color: #2c2c2c; color: white; font-size: 30px;">
+                PRESUPUESTO: 200000000</mat-label>
+        </form>
+        <!--_______________________________________________________________________________________________________________________________________________________-->
+        <!--__________________________________________________________________PERFIL JUGADOR______________________________________________________________________-->
+        <!--__________________________________________________________________--------------________________________________________________________________________-->
+        <mat-accordion>
+            <mat-expansion-panel class="crear-equipo-menu">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="titulo">
+                        <mat-icon>account_circle</mat-icon>
+                        &nbsp; TU PERFIL
+                    </mat-panel-title>
+                    <mat-panel-description class="titulo">
+                        Revisa tus estadisticas
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form style="display:flex; flex-direction: row;">
+                    <form style="display:flex; flex-direction: column; justify-content: center;">
+                        <mat-label class="titulo" id="username" style="margin-left:30px;margin-top:10px; color:white"> USERNAME </mat-label>
+                        <mat-label class="titulo" id="nombrecompleto" style="color:white"> NOMBRE COMPLETO </mat-label>
+                        <img src="https://www.pngmart.com/files/21/Account-User-PNG-Photo.png" class="card__image">
+                    </form>
+
+                    <form style="display:flex; flex-direction: column;">
+                        <mat-label class="titulo" style="margin-right: 10px; ;margin-left: 10px;"> PUNTUACION ACTUAL: </mat-label>
+                        <mat-label class="titulo" id="puntuacionActual" style="color: white; ;margin-left: 10px;">XXX</mat-label>
+
+                        <mat-label class="titulo" style="margin-top: 10px;margin-left: 10px; font-size: 40px;"> LIGAS: </mat-label>
+
+                        <form style="display:flex; flex-direction: row;">
+                            <form class="ligas">
+                                <form style="display:flex; flex-direction: column;margin-left: 10px; margin-top: 10px;">
+                                    <mat-label class="titulo"> LIGA PUBLICA: </mat-label>
+                                    <mat-label class="titulo" id="ligaPublicaRanking" style="color: white;"> xxx </mat-label>
+                                    <mat-label class="titulo"> CANTIDAD DE USUARIOS: </mat-label>
+                                    <mat-label class="titulo" id="usuariosPublicos" style="color: white;"> xxx </mat-label>
+
+                                    <button class="cyberbutton" style="color:white;margin-top: 10px;"> <mat-icon>sports_score</mat-icon> Ranking</button>
+                                </form>
+                            </form>
+                            <form class="ligas" style="width: 500px;">
+                                <form style="display:flex; flex-direction: row;margin-left: 10px;">
+                                    <form style="display:flex; flex-direction: column;margin-left: 10px; margin-top: 10px;">
+                                        <mat-label class="titulo"> LIGA PRIVADA: </mat-label>
+                                        <mat-label class="titulo" id="ligaPrivadaRanking" style="color: white;"> xxx </mat-label>
+                                        <mat-label class="titulo"> CANTIDAD DE USUARIOS: </mat-label>
+                                        <mat-label class="titulo" id="usuariosPrivados" style="color: white;"> xxx </mat-label>
+                                        <button class="cyberbutton" style="color:white;margin-top: 10px;"> <mat-icon>sports_score</mat-icon> Ranking</button>
+                                    </form>
+
+                                    <form style="display:flex; flex-direction: column;margin-left: 80px; margin-top: 15px;">
+                                        <button class="cyberbutton" style="color:white;margin-top: 10px; width: 130px;" (click)="ventanaCrearLiga()"> CREAR LIGA</button>
+                                        <button class="cyberbutton" style="color:white;margin-top: 10px; width: 130px;"> UNIRSE A LIGA</button>
+                                    </form>
+                                </form>
+                            </form>
+                        </form>
+                        <mat-label class="titulo" style="margin-top: 20px;margin-left: 10px; font-size: 40px;"> MIS EQUIPOS: </mat-label>
+
+                        <!-------------------------------------------------- TABLA DE MIS EQUIPOS ----------------------------------------------------->
+                        <table mat-table #equipos [dataSource]="dataSourceEquipo" style="width:400px; background-color:#2c2c2c; margin-top: 10px;margin-left: 10px;">
+
+                            <ng-container matColumnDef="nombre">
+                                <th mat-header-cell *matHeaderCellDef class="titulo" style="color:#ff9800"> Nombre </th>
+                                <td mat-cell *matCellDef="let element" class="titulo" style="color:white"> {{element.nombre}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="actions">
+                                <mat-header-cell *matHeaderCellDef class="titulo" style="color:#ff9800;margin-top: 17px;">
+                                    Opciones
+                                </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <button mat-icon-button [disabled]="!dataSourceEquipo.length">
+                                        <mat-icon style="color:#ff9800">edit</mat-icon>
+                                     </button>
+                                    <button mat-icon-button [disabled]="!dataSourceEquipo.length">
+                                        <mat-icon style="color:red">delete</mat-icon>
+                                     </button>
+                                </mat-cell>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumnsEquipo"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumnsEquipo;"></tr>
+                        </table>
+                    </form>
+                </form>
+            </mat-expansion-panel>
+
+
+
+            <!--_______________________________________________________________________________________________________________________________________________________-->
+            <!--__________________________________________________________________CREAR EQUIPO_________________________________________________________________________-->
+            <!--__________________________________________________________________------------__________________________________________________________________________-->
+
+
+            <mat-expansion-panel class="crear-equipo-menu">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="titulo">
+                        <mat-icon>add_to_queue</mat-icon>
+                        &nbsp; CREAR EQUIPO
+                    </mat-panel-title>
+                    <mat-panel-description class="titulo">
+                        Crea tu nuevo equipo!
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <form style="display:flex; flex-direction: row;">
+
+                    <form style="display:flex; flex-direction: column;">
+                        <mat-label class="titulo"> NOMBRE: </mat-label>
+                        <mat-form-field class="inputs">
+                            <input matInput name="Correo" type="text" [(ngModel)]="nombreEquipo" placeholder="Nombre">
+                        </mat-form-field>
+
+                        <form style="display:flex; flex-direction: row;">
+                            <mat-label class="titulo"> ESCUDERIA: </mat-label>
+                        </form>
+
+
+                        <!-- Caja  Escuderias -->
+                        <mat-form-field appearance="fill" class="combobox">
+                            <select matNativeControl required>
+                            <option value="alpine">Alpine</option>
+                            <option value="Haas">Haas</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="alfaromeo">Alfa Romeo</option>
+                            <option value="redbull">Red Bull</option>
+                            <option value="astonmartin">Aston Martin</option>
+                            <option value="ferrari">Ferrari</option>
+                            <option value="williams">WILLIAMS</option>
+                            <option value="alphatauri">ALPHATAURI</option>
+                        </select>
+                        </mat-form-field>
+
+                        <button class="cyberbutton" style="width: 120px;height:80px;line-height: 20px; margin-left:35px;margin-bottom: 20px;color:white" (click)="crearEquipo()"> CREAR EQUIPO</button>
+                    </form>
+
+                    <form style="display:flex; flex-direction: column; margin-left: 40px;">
+                        <mat-label class="titulo"> PILOTOS AGREGADOS: </mat-label>
+                        <table mat-table #pilotos [dataSource]="dataSourcePiloto" style="width:700px; background-color:#2c2c2c; margin-top: 10px;">
+
+                            <!--- Tabla de campeonatos con su llave -->
+                            <!-- Columna de codigo -->
+                            <ng-container matColumnDef="nombre">
+                                <th mat-header-cell *matHeaderCellDef class="titulo" style="color:#ff9800"> Nombre </th>
+                                <td mat-cell *matCellDef="let element" class="titulo" style="color:white"> {{element.nombre}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="precio">
+                                <th mat-header-cell *matHeaderCellDef class="titulo" style="color:#ff9800"> Precio($) </th>
+                                <td mat-cell *matCellDef="let element" class="titulo" style="color:white"> {{element.precio}} </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="actions">
+                                <mat-header-cell *matHeaderCellDef style="margin-top:19px;" class="titulo">
+                                    <mat-icon>delete</mat-icon>
+                                </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <button class="cyberbutton2" style="height: 25px; line-height: 0px; margin-top: 10px; color:white" [disabled]="!dataSourcePiloto.length" (click)="eliminarPiloto(element.nombre,element.precio,element)">
+                                        Eliminar
+                                     </button>
+                                </mat-cell>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumnsCampeonato"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumnsCampeonato;"></tr>
+                        </table>
+                    </form>
+                </form>
+
+
+
+
+
+                <!-- PANEL PARA AGREGAR PILOTOS -->
+                <mat-expansion-panel style="background-color: #2c2c2c; display: flex; flex-direction: column;">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="titulo" style="color:#ff9800">
+                            AGREGAR PILOTOS
+                        </mat-panel-title>
+                        <mat-panel-description class="titulo" style="color:#ff9800">
+                            Compra pilotos
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-label class="titulo" style="color:white"> Disponibles: </mat-label>
+                    <div style="display:flex; flex-direction: row;  overflow-x: scroll;" id="compra">
+                        <div class="card" id="Max Verstappen">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/max-verstappen/_jcr_content/image.img.1024.medium.jpg/1646819045507.jpg" class="card__image">
+                            <p class="titulo">Max Verstappen</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Max Verstappen',20000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 20M</h1>
+                        </div>
+
+                        <div class="card" id="Charles Leclerc">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/charles-leclerc/_jcr_content/image.img.1024.medium.jpg/1646818893219.jpg" class="card__image">
+                            <p class="titulo">Charles Leclerc</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Charles Leclerc', 16000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 16M</h1>
+                        </div>
+
+                        <div class="card" id="George Russell">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/george-russell/_jcr_content/image.img.1024.medium.jpg/1646750994602.jpg" class="card__image">
+                            <p class="titulo">George Russell</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('George Russell',15000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 15M</h1>
+                        </div>
+
+                        <div class="card" id="Sergio Perez">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/sergio-perez/_jcr_content/image.img.1024.medium.jpg/1646819228700.jpg" class="card__image">
+                            <p class="titulo">Sergio Perez</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Sergio Perez',14000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 14M</h1>
+                        </div>
+
+                        <div class="card" id="Lewis Hamilton">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/lewis-hamilton/_jcr_content/image.img.1024.medium.jpg/1647334259839.jpg" class="card__image">
+                            <p class="titulo"> Lewis Hamilton</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Lewis Hamilton',45000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 45M</h1>
+                        </div>
+
+                        <div class="card" id="Carlos Sainz">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/carlos-sainz/_jcr_content/image.img.1024.medium.jpg/1646818866749.jpg" class="card__image">
+                            <p class="titulo">Carlos Sainz</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Carlos Sainz',20000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 20M</h1>
+                        </div>
+
+                        <div class="card" id="Lando Norris">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/lando-norris/_jcr_content/image.img.1024.medium.jpg/1646819013197.jpg" class="card__image">
+                            <p class="titulo">Lando Norris</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Lando Norris',20000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 20M</h1>
+                        </div>
+
+                        <div class="card" id="Valtteri Bottas">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/valtteri-bottas/_jcr_content/image.img.1024.medium.jpg/1646819266274.jpg" class="card__image">
+                            <p class="titulo">Valtteri Bottas</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Valtteri Bottas',10000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 10M</h1>
+                        </div>
+
+                        <div class="card" id="Esteban Ocon">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/esteban-ocon/_jcr_content/image.img.1024.medium.jpg/1647334188097.jpg" class="card__image">
+                            <p class="titulo">Esteban Ocon</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Esteban Ocon',23000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 23M</h1>
+                        </div>
+
+                        <div class="card" id="Kevin Magnussen">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/kevin-magnussen/_jcr_content/image.img.1024.medium.jpg/1647447969295.jpg" class="card__image">
+                            <p class="titulo">Kevin Magnussen</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Kevin Magnussen',32000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 32M</h1>
+                        </div>
+
+
+                        <div class="card" id="Yuki Tsunoda">
+                            <img src="https://www.formula1.com/content/fom-website/en/drivers/yuki-tsunoda/_jcr_content/image.img.1024.medium.jpg/1648134405786.jpg" class="card__image">
+                            <p class="titulo">Yuki Tsunoda</p>
+                            <button class="cyberbutton2" style="color:white" (click)="comprarPiloto('Yuki Tsunoda',35000000)">COMPRAR</button>
+                            <h1 class="titulo" style="margin-top:10px">$ 35M</h1>
+                        </div>
+                    </div>
+
+                    <div [hidden]="visible" id="comprados">
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </form>
+</body>
