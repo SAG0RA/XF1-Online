@@ -12,23 +12,23 @@
     padding: 20px;
 }
 
-button,
-button::after {
-    width: 200px;
-    height: 86px;
+.cyberbutton,
+.cyberbutton::after {
+    width: 250px;
+    height: 50px;
     font-size: 20px;
     font-family: 'Cyber', sans-serif;
     background: linear-gradient(45deg, transparent 5%, #ff8d01 5%);
     border: 0;
     color: #fff;
     letter-spacing: 3px;
-    line-height: 88px;
+    line-height: 50px;
     box-shadow: 6px 0px 0px #2c2c2c;
     outline: transparent;
     position: relative;
 }
 
-button::after {
+.cyberbutton::after {
     --slice-0: inset(50% 50% 50% 50%);
     --slice-1: inset(80% -6px 0 0);
     --slice-2: inset(50% -6px 30% 0);
@@ -38,6 +38,8 @@ button::after {
     content: 'XF1';
     display: block;
     position: absolute;
+    width: 250px;
+    height: 50px;
     top: 0;
     left: 0;
     right: 0;
@@ -47,7 +49,7 @@ button::after {
     clip-path: var(--slice-0);
 }
 
-button:hover::after {
+.cyberbutton:hover::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
     animation-iteration-count: infinite;
