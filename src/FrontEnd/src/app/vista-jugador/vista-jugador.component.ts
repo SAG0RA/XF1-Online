@@ -10,12 +10,18 @@ export interface PilotoElement {
   precio:string,
 }
 
+export interface LigaElement {
+  nombre:string,
+  codigo:string,
+}
+
 export interface EquipoElement {
   nombre:string
 }
 
 const PILOTO_DATA: PilotoElement[]=[];
 const EQUIPO_DATA: EquipoElement[]=[];
+const LIGA_DATA: LigaElement[] = [];
 
 
 @Component({
@@ -25,15 +31,20 @@ const EQUIPO_DATA: EquipoElement[]=[];
 })
 export class VistaJugadorComponent implements OnInit {
 
-  @ViewChild('pilotos') tablaPilotos: MatTable<PilotoElement>;
-  @ViewChild('equipos') tablaEquipos: MatTable<PilotoElement>;
-
+ 
   dataSourcePiloto = PILOTO_DATA;
   dataSourceEquipo = EQUIPO_DATA;
+  dataSourceLiga = LIGA_DATA;
 
   @ViewChild('productos') table: MatTable<PilotoElement>;
+  @ViewChild('pilotos') tablaPilotos: MatTable<PilotoElement>;
+  @ViewChild('equipos') tablaEquipos: MatTable<PilotoElement>;
+  @ViewChild('ligas') tablaLigas: MatTable<LigaElement>;
+
+
   displayedColumnsCampeonato:string[] = ['nombre','precio','actions']; 
-  displayedColumnsEquipo:string[] = ['nombre','actions']; 
+  displayedColumnsEquipo:string[] = ['nombre','actions'];
+  displayedColumnsLiga:string[] = ['nombre','codigo','actions'];  
 
   lista_equipos = []
 
@@ -66,7 +77,7 @@ export class VistaJugadorComponent implements OnInit {
       ///////////////////// Actualizacion de presupuesto /////////////////////
       this.presupuesto -= precio
       var presupuesto_lbl = document.getElementById('presupuesto')
-      presupuesto_lbl.innerHTML = 'PRESUPUESTO:' + this.presupuesto.toString()
+      presupuesto_lbl.innerHTML = 'PRESUPUESTO ($):' + this.presupuesto.toString()
       
 
       PILOTO_DATA.push(lista_elementos)
@@ -87,7 +98,7 @@ export class VistaJugadorComponent implements OnInit {
     this.presupuesto += precio
 
     var presupuesto_lbl = document.getElementById('presupuesto')
-    presupuesto_lbl.innerHTML = 'PRESUPUESTO:' + this.presupuesto.toString()
+    presupuesto_lbl.innerHTML = 'PRESUPUESTO ($):' + this.presupuesto.toString()
     
 
     this.dataSourcePiloto.splice(row,1);
