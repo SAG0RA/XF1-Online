@@ -1,0 +1,19 @@
+<body>
+    <mat-card class="card">
+        <h1 class="title"> XF1-Online</h1>
+        <form class="box-form">
+            <mat-form-field class="inputs">
+                <input matInput name="Correo" [(ngModel)]="username" type="email" placeholder="Correo">
+            </mat-form-field>
+            <mat-form-field class="inputs">
+                <input matInput name="Contraseña" type="password" [(ngModel)]="passw" placeholder="Contraseña">
+            </mat-form-field>
+            <button style="margin:10px; color:#2c2c2c" (click)="NavToRegistrarse()">
+                REGISTRARSE
+            </button>
+            <button style="margin:10px; color:#2c2c2c" (click)="Autenticar()">
+                INGRESAR
+            </button>
+        </form>
+    </mat-card>
+</body>
