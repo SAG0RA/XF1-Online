@@ -13,8 +13,21 @@
             <mat-form-field class="inputs">
                 <input matInput name="username" [(ngModel)]="nombre_usuario" type="text" placeholder="Nombre de Usuario">
             </mat-form-field>
-            <mat-form-field class="inputs">
-                <input matInput name="fecha_nacimiento" [(ngModel)]="fecha_nac" type="date" placeholder="Fecha de nacimiento">
+
+            <mat-label class="titulo"> EDAD </mat-label>
+
+            <mat-form-field appearance="fill" class="combobox">
+                <select matNativeControl required [(ngModel)]="fecha_nac" name="fecha_nac">
+            <option value="18-28">18-28</option>
+            <option value="28-38">28-38</option>
+            <option value="38-48">38-48</option>
+            <option value="48-58">48-58</option>
+            <option value="58-68">58-68</option>
+            <option value="68-78">68-78</option>
+            <option value="78-88">78-88</option>
+            <option value="88-98">88-98</option>
+        </select>
+
             </mat-form-field>
             <mat-form-field class="inputs">
                 <input matInput name="Correo" type="email" [(ngModel)]="correo" placeholder="Correo">

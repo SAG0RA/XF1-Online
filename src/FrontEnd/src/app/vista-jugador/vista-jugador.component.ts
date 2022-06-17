@@ -31,10 +31,11 @@ const LIGA_DATA: LigaElement[] = [];
 })
 export class VistaJugadorComponent implements OnInit {
 
- 
+  
   dataSourcePiloto = PILOTO_DATA;
   dataSourceEquipo = EQUIPO_DATA;
   dataSourceLiga = LIGA_DATA;
+
 
   @ViewChild('productos') table: MatTable<PilotoElement>;
   @ViewChild('pilotos') tablaPilotos: MatTable<PilotoElement>;
@@ -47,6 +48,7 @@ export class VistaJugadorComponent implements OnInit {
   displayedColumnsLiga:string[] = ['nombre','codigo','actions'];  
 
   lista_equipos = []
+  username: string = localStorage.getItem('user')
 
   presupuesto = 200000000
 
@@ -129,6 +131,8 @@ export class VistaJugadorComponent implements OnInit {
         this.nombreEquipo = ''
 
         alert('Tu equipo ha sido creado con éxito!')
+
+
 
       }
     }
