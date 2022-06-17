@@ -11,6 +11,6 @@ namespace XF1Api
         Task<IEnumerable<Escuderia>> GetAll();
         Task Add(Escuderia escuderia);
         Task Delete(int Id);
-        Task Update(Escuderia escuderia);           
+        Task Update(Escuderia escuderia, int id);           
     }
 }

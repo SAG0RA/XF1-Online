@@ -11,6 +11,6 @@ namespace XF1Api
         Task<IEnumerable<Carrera>> GetAll();
         Task Add(Carrera carrera);
         Task Delete(string Id);
-        Task Update(Carrera carrera);           
+        Task Update(Carrera carrera, string id);           
     }
 }

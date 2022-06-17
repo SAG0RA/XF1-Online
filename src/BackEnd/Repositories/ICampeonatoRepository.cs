@@ -11,6 +11,6 @@ namespace XF1Api
         Task<IEnumerable<Campeonato>> GetAll();
         Task Add(Campeonato campeonato);
         Task Delete(string Id);
-        Task Update(Campeonato campeonato);           
+        Task Update(Campeonato campeonato, string id);           
     }
 }

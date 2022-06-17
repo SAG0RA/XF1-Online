@@ -70,7 +70,7 @@ namespace XF1Api.Controllers
             };
             
     
-            await _equipoRepository.Update(equipo);
+            await _equipoRepository.Update(equipo, Id);
             return Ok();
     
         }
