@@ -11,6 +11,6 @@ namespace XF1Api
         Task<IEnumerable<Jugador>> GetAll();
         Task Add(Jugador jugador);
         Task Delete(int Id);
-        Task Update(Jugador jugador);           
+        Task Update(Jugador jugador, int id);           
     }
 }

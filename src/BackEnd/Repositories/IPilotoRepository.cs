@@ -11,6 +11,6 @@ namespace XF1Api
         Task<IEnumerable<Piloto>> GetAll();
         Task Add(Piloto piloto);
         Task Delete(int Id);
-        Task Update(Piloto piloto);           
+        Task Update(Piloto piloto, int id);           
     }
 }

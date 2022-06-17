@@ -43,9 +43,9 @@ namespace XF1Api.Repositories
             return await _context.EQUIPO.ToListAsync();
         }
     
-        public async Task Update(Equipo equipo)
+        public async Task Update(Equipo equipo, int id)
         {
-            var itemToUpdate = await _context.EQUIPO.FindAsync(equipo.Id);
+            var itemToUpdate = await _context.EQUIPO.FindAsync(id);
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Escuderia_id = equipo.Escuderia_id;

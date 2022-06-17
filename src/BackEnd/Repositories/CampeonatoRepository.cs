@@ -43,9 +43,9 @@ namespace XF1Api.Repositories
             return await _context.CAMPEONATO.ToListAsync();
         }
     
-        public async Task Update(Campeonato campeonato)
+        public async Task Update(Campeonato campeonato, string id)
         {
-            var itemToUpdate = await _context.CAMPEONATO.FindAsync(campeonato.Id);
+            var itemToUpdate = await _context.CAMPEONATO.FindAsync(id);
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Nombre = campeonato.Nombre;

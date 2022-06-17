@@ -69,11 +69,11 @@ namespace XF1Api.Controllers
             {
                 Nombre = updatePilotoDto.Nombre,
                 Precio = updatePilotoDto.Precio,
-                Puntaje = updatePilotoDto.Puntaje,
+                Puntaje = updatePilotoDto.Puntaje
             };
             
     
-            await _pilotoRepository.Update(piloto);
+            await _pilotoRepository.Update(piloto, Id);
             return Ok();
     
         }

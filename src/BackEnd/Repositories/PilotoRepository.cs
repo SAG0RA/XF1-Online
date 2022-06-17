@@ -43,17 +43,23 @@ namespace XF1Api.Repositories
             return await _context.PILOTO.ToListAsync();
         }
     
-        public async Task Update(Piloto piloto)
+        public async Task Update(Piloto piloto, int id)
         {
-            var itemToUpdate = await _context.PILOTO.FindAsync(piloto.Id);
-            if (itemToUpdate == null)
-                throw new NullReferenceException();
-            itemToUpdate.Nombre = piloto.Nombre;
-            itemToUpdate.Precio = piloto.Precio;
-            itemToUpdate.Puntaje = piloto.Puntaje;
+            var itemToUpdate = await _context.PILOTO.FindAsync(id);
 
-            await _context.SaveChangesAsync();
-    
+            if (itemToUpdate != null)
+            {
+                itemToUpdate.Nombre = piloto.Nombre;
+                itemToUpdate.Precio = piloto.Precio;
+                itemToUpdate.Puntaje = piloto.Puntaje;
+
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+            
         }
 
     }

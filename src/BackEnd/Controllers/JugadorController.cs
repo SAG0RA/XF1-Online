@@ -77,7 +77,7 @@ namespace XF1Api.Controllers
             };
             
     
-            await _jugadorRepository.Update(jugador);
+            await _jugadorRepository.Update(jugador, Id);
             return Ok();
     
         }

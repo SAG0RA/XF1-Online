@@ -43,9 +43,9 @@ namespace XF1Api.Repositories
             return await _context.CARRERA.ToListAsync();
         }
     
-        public async Task Update(Carrera carrera)
+        public async Task Update(Carrera carrera, string id)
         {
-            var itemToUpdate = await _context.CARRERA.FindAsync(carrera.Id);
+            var itemToUpdate = await _context.CARRERA.FindAsync(id);
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Nombre = carrera.Nombre;

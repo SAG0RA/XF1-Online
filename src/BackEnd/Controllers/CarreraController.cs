@@ -79,7 +79,7 @@ namespace XF1Api.Controllers
             };
             
     
-            await _carreraRepository.Update(carrera);
+            await _carreraRepository.Update(carrera, Id);
             return Ok();
     
         }

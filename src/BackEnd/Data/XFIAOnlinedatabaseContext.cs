@@ -13,13 +13,12 @@ namespace XF1Api.Data
         {
         }
 
-        public virtual DbSet<Campeonato> CAMPEONATO { get; init; } = null!;
-        public virtual DbSet<Carrera> CARRERA { get; init; } = null!;
-        public virtual DbSet<Equipo> EQUIPO { get; init; } = null!;
-
-        public virtual DbSet<Escuderia> ESCUDERIA { get; init; } = null!;
-        public virtual DbSet<Jugador> JUGADOR { get; init; } = null!;
-        public virtual DbSet<Piloto> PILOTO { get; init; } = null!;
+        public DbSet<Campeonato> CAMPEONATO { get; init; }
+        public DbSet<Carrera> CARRERA { get; init; }
+        public DbSet<Equipo> EQUIPO { get; init; } 
+        public DbSet<Escuderia> ESCUDERIA { get; init; } 
+        public DbSet<Jugador> JUGADOR { get; init; }
+        public DbSet<Piloto> PILOTO { get; init; }
 
     }
 }

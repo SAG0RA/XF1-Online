@@ -75,7 +75,7 @@ namespace XF1Api.Controllers
             };
             
     
-            await _campeonatoRepository.Update(campeonato);
+            await _campeonatoRepository.Update(campeonato, Id);
             return Ok();
     
         }

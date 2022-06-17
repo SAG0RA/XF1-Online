@@ -72,7 +72,7 @@ namespace XF1Api.Controllers
             };
             
     
-            await _escuderiaRepository.Update(escuderia);
+            await _escuderiaRepository.Update(escuderia, Id);
             return Ok();
     
         }
