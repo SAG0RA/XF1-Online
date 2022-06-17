@@ -22,9 +22,9 @@ export class CrearLigaComponent implements OnInit, OnDestroy {
   @ViewChild('miembros') tablaMiembros: MatTable<MiembroElement>;
   displayedColumnsEquipo: string[] = ['nombre'];
 
-  nombreLiga:string
+  nombreLiga: string
   userNameInvitado: string
-  codigo:string
+  codigo: string
 
   constructor() { }
 
@@ -44,20 +44,28 @@ export class CrearLigaComponent implements OnInit, OnDestroy {
     console.log(MIEMBRO_DATA)
     if (this.existeMiembro(MIEMBRO_DATA, { nombre: this.userNameInvitado })) {
       alert('El jugador ya ha sido agregado')
-    } else {
 
-      var usuarioNuevo = {
-        nombre: this.userNameInvitado
+    } else {
+      if (!this.userNameInvitado) {
+        alert('Agrega el jugador')
+      } else {
+        var usuarioNuevo = {
+          nombre: this.userNameInvitado
+        }
+        MIEMBRO_DATA.push(usuarioNuevo)
+        this.tablaMiembros.renderRows()
       }
-      MIEMBRO_DATA.push(usuarioNuevo)
-      this.tablaMiembros.renderRows()
     }
+    
+    
+    
+
   }
 
-  crearLiga(){
-    if(!this.nombreLiga){
+  crearLiga() {
+    if (!this.nombreLiga) {
       alert('Agrega el nombre de tu liga')
-    }else{
+    } else {
       this.codigo = this.crearCodigo()
       alert('Tu liga ha sido creada')
     }
@@ -69,8 +77,8 @@ export class CrearLigaComponent implements OnInit, OnDestroy {
     var codigo = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < 10; i++)
-      codigo += possible.charAt(Math.floor(Math.random() * possible.length)); 
-      return codigo;
+      codigo += possible.charAt(Math.floor(Math.random() * possible.length));
+    return codigo;
   }
 
 
