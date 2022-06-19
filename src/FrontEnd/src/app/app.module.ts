@@ -29,6 +29,7 @@ import { VistaJugadorComponent } from './vista-jugador/vista-jugador.component';
 import { LoginComponent } from './login/login.component';
 import { VistaAdminComponent } from './vista-admin/vista-admin.component';
 
+
 import { RegistroJugadorComponent } from './registro-jugador/registro-jugador.component'  
 
 
