@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+
     window.localStorage.clear();
     this.API.GET(this.url)
       .subscribe(response => {
