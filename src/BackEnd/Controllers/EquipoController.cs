@@ -48,7 +48,8 @@ namespace XF1Api.Controllers
             {
                 Id = createEquipoDto.Id,
                 Jugador_id = createEquipoDto.Jugador_id,
-                Escuderia_id = createEquipoDto.Escuderia_id
+                Escuderia_id = createEquipoDto.Escuderia_id,
+                Nombre = createEquipoDto.Nombre
             };
             await _equipoRepository.Add(equipo);
             return Ok();
@@ -67,6 +68,7 @@ namespace XF1Api.Controllers
             Equipo equipo = new()
             {
                 Escuderia_id = updateEquipoDto.Escuderia_id,
+                Nombre = updateEquipoDto.Nombre,
             };
             
     

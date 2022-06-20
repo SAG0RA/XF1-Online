@@ -49,6 +49,7 @@ namespace XF1Api.Repositories
             if (itemToUpdate == null)
                 throw new NullReferenceException();
             itemToUpdate.Escuderia_id = equipo.Escuderia_id;
+            itemToUpdate.Nombre = equipo.Nombre;
 
             await _context.SaveChangesAsync();
     
